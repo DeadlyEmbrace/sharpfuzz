@@ -10,7 +10,7 @@ namespace Jint.Fuzz
 	{
 		public static void Main(string[] args)
 		{
-			Fuzzer.Run(() =>
+			Fuzzer.OutOfProcess.Run(() =>
 			{
 				try
 				{
