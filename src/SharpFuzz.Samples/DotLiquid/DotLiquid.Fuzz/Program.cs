@@ -23,7 +23,7 @@ namespace DotLiquid.Fuzz
 				Doubles = new List<double> { 1.1, 2.2, 3.3 }
 			};
 
-			Fuzzer.Run(() =>
+			Fuzzer.OutOfProcess.Run(() =>
 			{
 				try
 				{
