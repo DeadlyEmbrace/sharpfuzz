@@ -1,13 +1,10 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using SharpFuzz;
 
 namespace Microsoft.CodeAnalysis.CSharp.Fuzz
 {
 	public class Program
 	{
-		private class FuzzException : Exception { }
-
 		public static void Main(string[] args)
 		{
 			Fuzzer.Run(() =>
