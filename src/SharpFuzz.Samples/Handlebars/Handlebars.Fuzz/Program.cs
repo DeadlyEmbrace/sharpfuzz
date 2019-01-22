@@ -33,11 +33,11 @@ namespace Handlebars.Fuzz
 
 					template(user);
 				}
-				catch (HandlebarsCompilerException) { }
-				catch (HandlebarsParserException) { }
-				catch (HandlebarsRuntimeException) { }
+				catch (ArgumentException) { }
+				catch (HandlebarsException) { }
 				catch (InvalidCastException) { }
 				catch (InvalidOperationException) { }
+				catch (NullReferenceException) { }
 			});
 		}
 	}
