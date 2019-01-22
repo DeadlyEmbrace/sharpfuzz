@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Microsoft.CodeAnalysis.CSharp.Run
 {
@@ -9,7 +8,16 @@ namespace Microsoft.CodeAnalysis.CSharp.Run
 		{
 			var text = File.ReadAllText(args[0]);
 			var tree = CSharpSyntaxTree.ParseText(text);
-			var root = (CompilationUnitSyntax)tree.GetRoot();
+
+			var compilation = CSharpCompilation.Create(Path.GetRandomFileName())
+				.WithOptions(new CSharpCompilationOptions(OutputKind.ConsoleApplication))
+				.AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location))
+				.AddSyntaxTrees(tree);
+
+			using (var stream = new MemoryStream())
+			{
+				compilation.Emit(stream);
+			}
 		}
 	}
 }
