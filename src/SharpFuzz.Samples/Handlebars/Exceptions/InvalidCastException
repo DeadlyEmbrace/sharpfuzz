@@ -1,0 +1,5 @@
+<p>{{>tr=ng}}</p>{{Integer}}>
+{{#each Doubles}}
+i>{{.}}<
+{{/each}}
+</ul>
