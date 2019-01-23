@@ -1,5 +1,1 @@
-<p>{{String}}</p>
-<p>{{Integer}}>
-{{@indexDoubles<li>{{..}}<
-{{/each}}
-</ul>
+{{@..}}

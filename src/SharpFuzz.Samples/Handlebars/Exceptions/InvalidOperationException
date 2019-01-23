@@ -1,6 +1,1 @@
-<p>{{Strin'}}</p>
-<p>{{Integer}}</p>>
-{{#each Doubles}}
-  <li>{{.}}</li>
-{{/each}}
-</ul>
+{{0
