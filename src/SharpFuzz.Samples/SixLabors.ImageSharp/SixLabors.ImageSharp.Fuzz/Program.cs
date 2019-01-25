@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.IO;
 using SharpFuzz;
 
 namespace SixLabors.ImageSharp.Fuzz
@@ -11,10 +11,14 @@ namespace SixLabors.ImageSharp.Fuzz
 			{
 				try
 				{
-					Image.Load(args[0]);
+					var bytes = File.ReadAllBytes(args[0]);
+
+					bytes[0] = 0xff;
+					bytes[1] = 0xd8;
+
+					Image.Load(bytes);
 				}
 				catch (ImageFormatException) { }
-				catch (NullReferenceException) { }
 			});
 		}
 	}
